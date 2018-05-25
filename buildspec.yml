@@ -5,9 +5,9 @@ phases:
     commands:
       - echo "---Start build---"
       - echo "current"
-      - ls -la /
-      - echo "root"
       - ls -la ./
+      - echo "root"
+      - ls -la /
       - echo env
       - env
   post_build:
