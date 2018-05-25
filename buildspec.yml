@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "---Start build---"
+      - echo "current"
+      - ls -la /
+      - echo "root"
+      - ls -la ./
+      - echo env
+      - env
+  post_build:
+    commands:
+      - echo "Done!"
+
+cache:
+  paths:
+    - '/root/.ivy2/cache/**/*'
+    - '/root/.sbt/**/*'

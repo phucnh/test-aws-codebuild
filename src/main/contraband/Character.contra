@@ -1,0 +1,42 @@
+package com.example
+@target(Scala)
+@codecPackage("com.example.codec")
+@codecTypeField("type")
+@fullCodec("CustomJsonProtocol")
+
+type Person {
+  name: String!
+  age: Int
+}
+
+interface Character {
+  name: String!
+  appearsIn: [com.example.Episode]!
+  friends: lazy [com.example.Character]
+}
+
+enum Episode {
+  NewHope
+  Empire
+  Jedi
+}
+
+type Human implements Character {
+  name: String!
+  appearsIn: [com.example.Episode]!
+  friends: lazy [com.example.Character]
+  starships: [com.example.Starship]
+  totalCredits: Int
+}
+
+type Droid implements Character {
+  name: String!
+  appearsIn: [com.example.Episode]!
+  friends: lazy [com.example.Character]
+  primaryFunction: String
+}
+
+interface Starship {
+  name: String!
+  length(unit: Int): Double
+}
